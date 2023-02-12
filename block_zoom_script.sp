@@ -16,6 +16,9 @@ public void OnGameFrame()
 {
 	for (int i = 1; i <= MaxClients; i++)
 	{
-		ClientCommand(i, "cam_idealdist 150");
+		if (IsClientInGame(i))
+		{
+			ClientCommand(i, "cam_idealdist 150");
+		}
 	}
 }
